@@ -3,7 +3,7 @@ from app import db
 class User(db.Model):
 	__tablename__ = 'users_user'
         userid = db.Column(db.Integer,nullable = False, primary_key=True)
-	userName = db.Column(db.String(50), Unique=True)
+	userName = db.Column(db.String(50), unique=True)
 	img = db.Column(db.LargeBinary)
         fname = db.Column(db.String(50), unique=True)
         lname = db.Column(db.String(50), unique=True)
