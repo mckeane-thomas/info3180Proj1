@@ -10,7 +10,7 @@ class RegisterForm(Form):
 	img = FileField('image', validators=[FileRequired(),FileAllowed(images, 'Images only!')])
 	firstName = TextField('First Name:', [Required()])
 	lastName = TextdField('Last Name:', [Required()])
-	sex = SelectField('Sex', choices=[('M','Male'),('F','Female')], [Required()])
+	sex = RadioField('Sex', choices=[('M','Male'),('F','Female')], default = 'M',[Required()])
 	age = IntegerField('Age:', [Required()])
 	profile_add_on = DateField('Profile Created',[validators.required()])
 	high_score = IntegerField('High Score', [Optional()])
