@@ -12,7 +12,7 @@ class RegisterForm(Form):
 	username = TextField('Username:', [Required()])
 	upload = FileField('image', validators=[FileRequired(),FileAllowed(['jpg', 'png'], 'Images only!')])
 	firstName = TextField('First Name:', [Required()])
-	lastName = TextdField('Last Name:', [Required()])
+	lastName = TextField('Last Name:', [Required()])
 	sex = RadioField(u'Sex', choices=[
         ('M', u'Male'),
         ('F', u'Female')],
