@@ -10,7 +10,7 @@ from app import app
 from flask import render_template, request, redirect, url_for
 from app import app
 from flask import render_template,request,redirect,url_for
-from app.forms import RegisterForm, LoginForm
+from app.forms import RegisterForm
 from app import db
 from app.models import User
 
