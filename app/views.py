@@ -7,9 +7,7 @@ This file creates your application.
 """
 
 from app import app
-from flask import render_template, request, redirect, url_for
-from app import app
-from flask import render_template,request,redirect,url_for
+from flask import render_template,request,redirect,url_for, Blueprint,flash, g, session
 from app.forms import RegisterForm
 from app import db
 from app.models import User
@@ -59,7 +57,7 @@ def page_not_found(error):
     return render_template('404.html'), 404
     
 #route for adding a profile
-@app.route('/profile',methods=['GET'])
+@app.route('/profile/',methods=['GET'])
 def profile():
 
   """adding a profile single Profile."""
