@@ -1,3 +1,4 @@
+from flask import Flask
 from flaskext.uploads import UploadSet, IMAGES
 from flask.ext.wtf import Form
 from wtforms.fields import TextField, IntegerField, DateField, RadioField
