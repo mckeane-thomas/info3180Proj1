@@ -1,6 +1,6 @@
 from flask import Flask
-from flaskext.uploads import UploadSet, IMAGES
 from flask.ext.wtf import Form
+from flaskext.uploads import UploadSet, IMAGES
 from wtforms.fields import TextField, IntegerField, DateField, RadioField
 from wtforms.validators import Required, Optional
 from flask_wtf.file import FileField, FileAllowed, FileRequired
