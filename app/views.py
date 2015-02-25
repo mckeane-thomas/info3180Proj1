@@ -74,7 +74,7 @@ def profile():
      return redirect(url_for('home'))
   return render_template("profile.html", form=form)    
     
-@app.route('/profile1')
+@app.route('/profile1/')
 def profile1():
     """Render website's home page."""
     return render_template('profile1.html')
