@@ -10,10 +10,10 @@ class RegisterForm(Form):
 	img = FileField('image', validators=[FileRequired(),FileAllowed(images, 'Images only!')])
 	firstName = TextField('First Name:', [Required()])
 	lastName = TextdField('Last Name:', [Required()])
-	time_offset = RadioField(u'Label', choices=[
-        ('2', u'Check when Daylight saving has begun, UTC+02:00'),
-        ('1', u'Check when Daylight saving has stopped, UTC+01:00')],
-        default='2', validators=[Required()])
+	sex = RadioField(u'Sex', choices=[
+        ('M', u'Male'),
+        ('F', u'Female')],
+        default='M', validators=[Required()])
 	age = IntegerField('Age:', [Required()])
 	profile_add_on = DateField('Profile Created',[validators.required()])
 	high_score = IntegerField('High Score', [Optional()])
