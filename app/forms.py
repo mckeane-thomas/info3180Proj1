@@ -18,6 +18,6 @@ class RegisterForm(Form):
         ('F', u'Female')],
         default='M', validators=[Required()])
 	age = IntegerField('Age:', [Required()])
-	profile_add_on = DateField('Profile Created',[validators.required()])
+	profile_add_on = DateField('Profile Created',[Required()])
 	high_score = IntegerField('High Score', [Optional()])
 	tdollars = IntegerField('TDollars', [Optional()])
