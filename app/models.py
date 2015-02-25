@@ -15,7 +15,7 @@ class User(db.Model):
 	
 
 
-	def __init__(self, userid, username, img,fname, lname,, profile_add_on,sex,age):
+	def __init__(self, userid, username, img,fname, lname,profile_add_on,sex,age):
 	   self.userid = userid
 	   self.username=username 
 	   self.img = img
