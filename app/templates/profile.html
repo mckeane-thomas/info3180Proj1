@@ -1,7 +1,7 @@
   {% extends "base.html" %}
   {% block js %}
   {% endblock %}
-    {% block content %}
+    {% block main %}
       {% from "forms/macros.html" import render_field %}
       <form method="POST" action="." class="form">
         {{ form.csrf_token }}
