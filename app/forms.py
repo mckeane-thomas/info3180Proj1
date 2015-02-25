@@ -4,7 +4,7 @@ from wtforms.fields import TextField, IntegerField, DateField, RadioField
 from wtforms.validators import Required, Optional
 from flask_wtf.file import FileField, FileAllowed, FileRequired
  
-images = UploadSet('images', IMAGES)
+#images = UploadSet('images', IMAGES)
 
 class RegisterForm(Form):
       #profile_photo =FileField('Profile Image')
