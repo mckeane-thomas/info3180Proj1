@@ -1,7 +1,7 @@
 #from flask.ext.uploads import UploadSet, IMAGES
 from flask.ext.wtf import Form
 from wtforms.fields import TextField, IntegerField, DateField, RadioField
-from wtforms.validators import Required, Optional, FileField, file_required
+from wtforms.validators import Required, Optional, file_required
 from flask_wtf.file import FileField, FileAllowed, FileRequired
  
 class RegisterForm(Form):
