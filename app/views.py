@@ -17,10 +17,23 @@ from app.models import User
 # Routing for your application.
 ###
 
-@app.route('/')
+@app.route('/',methods=['GET'])
 def home():
-    """Render website's home page."""
-    return render_template('home.html')
+   #route for adding a profile
+  """adding a profile single Profile."""
+  form = RegisterForm(request.form)
+  if form.validate_on_submit():
+     user = User(userid = form.userid.data, username=form.username.data, img=form.img.data,fname=form.fname.data,lname=form.lname.data,sex=form.sex.data,age=form.age.data,profile_add_on=form.profile_add_on.data)
+     db.session.add(user)
+     db.session.commit()
+
+     session['user_id']=user.id
+
+     flash('You have been registered')
+    
+     return redirect(url_for('home'))
+  return render_template("home.html", form=form)    
+    
 
 
 @app.route('/about/')
