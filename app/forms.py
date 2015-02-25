@@ -1,4 +1,4 @@
-#from flask.ext.uploads import UploadSet, IMAGES
+from flask.ext.uploads import UploadSet, IMAGES
 from flask.ext.wtf import Form
 from wtforms.fields import TextField, IntegerField, DateField, RadioField
 from wtforms.validators import Required, Optional
@@ -8,7 +8,7 @@ class RegisterForm(Form):
       #profile_photo =FileField('Profile Image')
 	userID =IntegerField('ID:', [Required()])
 	username = TextField('Username:', [Required()])
-	img = FileField('image', validators=[FileRequired(),FileAllowed(images, 'Images only!')])
+	img = FileField('image', validators=[FileRequired(),FileAllowed(img, 'Images only!')])
 	firstName = TextField('First Name:', [Required()])
 	lastName = TextdField('Last Name:', [Required()])
 	sex = RadioField(u'Sex', choices=[
