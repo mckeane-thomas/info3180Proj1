@@ -5,7 +5,7 @@
 
     SECRET_KEY = 'This string will be replaced with a proper key in production.'
 
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(_basedir, 'app.db')
+    app.config['SQLALCHEMY_DATABASE_URI']='postgresql://action@localhost/action'
     DATABASE_CONNECT_OPTIONS = {}
 
     THREADS_PER_PAGE = 8
