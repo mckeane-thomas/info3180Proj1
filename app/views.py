@@ -65,7 +65,7 @@ def page_not_found(error):
 def profile_add():
    #route for adding a profile
    """adding a profile single Profile."""
-   form = RegisterForm(request.form)
+   #form = RegisterForm(request.form)
    if request.method =="POST":
       #write to the database
       img = request.form['img']
