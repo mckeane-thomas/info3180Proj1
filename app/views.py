@@ -23,14 +23,14 @@ app.config['SECRET_KEY']="sdfhdjksfhgm nm,sfnjkdfsbdjbfkjsbbjasbhdsbfd"
 @app.route('/',methods=['GET'])
 def home():
    """Render the website's about page."""
-return render_template('home.html')
+   return render_template('home.html')
     
 
 
 @app.route('/about/')
 def about():
-    """Render the website's about page."""
-return render_template('about.html')
+   """Render the website's about page."""
+   return render_template('about.html')
 
 
 ###
@@ -39,9 +39,9 @@ return render_template('about.html')
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):
-    """Send your static text file."""
-    file_dot_text = file_name + '.txt'
- return app.send_static_file(file_dot_text)
+   """Send your static text file."""
+   file_dot_text = file_name + '.txt'
+   return app.send_static_file(file_dot_text)
 
 
 @app.after_request
