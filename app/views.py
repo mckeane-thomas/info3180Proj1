@@ -62,33 +62,33 @@ return render_template('404.html'), 404
     
 
 @app.route('/profile/')
-   def profile():
-       #route for adding a profile
-      """adding a profile single Profile."""
-      form = RegisterForm()#(request.form)
-      #if form.validate_on_submit():
-         #user = User(userid = form.userid.data, username=form.username.data, img=form.img.data,fname=form.fname.data,lname=form.lname.data,sex=form.sex.data,age=form.age.data,profile_add_on=form.profile_add_on.data)
-         #db.session.add(user)
-         #db.session.commit()
+def profile():
+   #route for adding a profile
+   """adding a profile single Profile."""
+   #form = RegisterForm()#(request.form)
+   #if form.validate_on_submit():
+   #user = User(userid = form.userid.data, username=form.username.data, img=form.img.data,fname=form.fname.data,lname=form.lname.data,sex=form.sex.data,age=form.age.data,profile_add_on=form.profile_add_on.data)
+   #db.session.add(user)
+   #db.session.commit()
 
-         #session['user_id']=user.id
+   #session['user_id']=user.id
 
-         #flash('You have been registered')
+   #flash('You have been registered')
     
       return redirect(url_for('home'))
    return render_template("profile_add.html", form=form) 
   
 @app.route('/profiles/')
-   def profile_list():
-       #route for adding a profile
-      """adding a profile single Profile."""
+def profile_list():
+   #route for adding a profile
+   """adding a profile single Profile."""
       
-  return render_template("profiles.html", form=form) 
+   return render_template("profiles.html", form=form) 
   
 @app.route('/profile/<int:id>/')
-  def single_profile(id):
+def single_profile(id):
     #route for viewing a profile by id
-  return "profile {}".format(id)
+    return "profile {}".format(id)
 
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0",port="9999")
