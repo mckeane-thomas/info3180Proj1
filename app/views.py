@@ -72,7 +72,7 @@ def profile_add():
       #db.session.commit()
 
       #session['user_id']=user.id
-   return "Post Successful"   
+      return "Post Successful"   
       flash('You have been registered')
     
       return redirect(url_for('home'))
