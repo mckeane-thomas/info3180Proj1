@@ -5,10 +5,9 @@
 {% endblock %}
 
 {% block main %}
-     {% from "macros.html" import render_field %}
+    
  <form method="POST" action="." class="form">
      {{ form.csrf_token }}
-     {{ render_field(form.userid, class="input text") }}
      {{ Image: (form.img, class="input text") }}
      {{ First Name(form.fname, class="input text") }}
      {{ Last Name(form.lname, class="input text") }}
