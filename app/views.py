@@ -75,7 +75,7 @@ def profile_add():
       #db.session.commit()
 
       #session['user_id']=user.id
-      return "{} Post Successful".format(fname,lname)   
+      return "{} {} Post Successful".format(fname,lname)   
       #flash('You have been registered')
     
       #return redirect(url_for('home'))
