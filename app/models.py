@@ -1,14 +1,14 @@
 from app import db
 
 class User(db.Model):
-        userid = db.Column(db.Integer,nullable = False, primary_key=True)
+        id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(50), unique=True)
-	#img = db.Column(db.LargeBinary)
+	img = db.Column(db.LargeBinary)
         fname = db.Column(db.String(50), unique=True)
         lname = db.Column(db.String(50), unique=True)
         sex=db.Column(db.String(10))
 	age = db.Column(db.Integer)
-	#profile_add_on=db.Column(db.DateTime)
+	profile_add_on=db.Column(db.DateTime)
 	high_score =db.Column(db.Integer)
 	tDollars =db.Column(db.Integer)
 	
