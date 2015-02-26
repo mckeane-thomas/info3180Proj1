@@ -8,7 +8,7 @@ class User(db.Model):
         lname = db.Column(db.String(50), unique=True)
         sex=db.Column(db.String(10))
 	age = db.Column(db.Integer)
-	profile_add_on=db.Column(db.DateTime)
+	#profile_add_on=db.Column(db.DateTime)
 	high_score =db.Column(db.Integer)
 	tDollars =db.Column(db.Integer)
 	
