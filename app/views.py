@@ -80,6 +80,11 @@ def page_not_found(error):
       """adding a profile single Profile."""
       
   return render_template("profiles.html", form=form) 
+  
+  @app.route('/profile/<int:id>/')
+  def single_profile(id):
+    #route for viewing a profile by id
+    return "profile {}".format(id)
 
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0",port="9999")
