@@ -68,9 +68,19 @@ def profile_add():
    form = RegisterForm(request.form)
    if request.method =="POST":
       #write to the database
-      #fname = request.form
+      img = request.form['img']
+      
+      username = request.form['username']
+      fname = request.form['fname']
+      lname = request.form['lname]
+      sex = request.form['sex]
+      age = request.form['age']
+      profile_add_on = request.form['profile_add_on']
+      
+      
+      
       #if form.validate_on_submit():
-      user = User(userid = form.userid.data, username=form.username.data, img=form.img.data,fname=form.fname.data,lname=form.lname.data, sex=form.sex.data, age=form.age.data, profile_add_on=form.profile_add_on.data)
+      #user = User(userid = form.userid.data, username=form.username.data, img=form.img.data,fname=form.fname.data,lname=form.lname.data, sex=form.sex.data, age=form.age.data, profile_add_on=form.profile_add_on.data)
       #db.session.add(user)
       #db.session.commit()
 
