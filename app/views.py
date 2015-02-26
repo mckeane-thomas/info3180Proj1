@@ -65,15 +65,15 @@ def page_not_found(error):
 def profile_add():
    #route for adding a profile
    """adding a profile single Profile."""
-   form = RegisterForm()#(request.form)
+   form = RegisterForm(request.form)
    if form.validate_on_submit():
       #user = User(userid = form.userid.data, username=form.username.data, img=form.img.data,fname=form.fname.data,lname=form.lname.data,sex=form.sex.data,age=form.age.data,profile_add_on=form.profile_add_on.data)
       #db.session.add(user)
       #db.session.commit()
 
       #session['user_id']=user.id
-
-      #flash('You have been registered')
+   return "Post Successful"   
+      flash('You have been registered')
     
       return redirect(url_for('home'))
    return render_template("profile_add.html", form=form) 
