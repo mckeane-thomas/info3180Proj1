@@ -1,13 +1,9 @@
-import os
-import sys
-
-from flask import Flask, render_template
+from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 
 
-
+app = Flask(__name__)
+SQLALCHEMY_DATABASE_URI='postgresql://action@localhost/action'
 db=SQLAlchemy(app)
-
-
 
 from app import views,models
