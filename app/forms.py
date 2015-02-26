@@ -20,4 +20,4 @@ class RegisterForm(Form):
 	age = IntegerField('Age:', [Required()])
 	profile_add_on = DateField('Profile Created',[Required()])
 	high_score = IntegerField('High Score', [Optional()])
-	tdollars = IntegerField('TDollars', [Optional()])
+	tDollars = IntegerField('TDollars', [Optional()])
