@@ -11,7 +11,7 @@ class RegisterForm(Form):
 	userid =IntegerField('ID:', [Required()])
 	username = TextField('Username:', [Required()])
 	img = FileField('image', validators=[FileRequired(),FileAllowed(['jpg', 'png'], 'Images only!')])
-	fame = TextField('First Name:', [Required()])
+	fname = TextField('First Name:', [Required()])
 	lname = TextField('Last Name:', [Required()])
 	sex = RadioField(u'Sex', choices=[
         ('M', u'Male'),
