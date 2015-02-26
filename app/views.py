@@ -72,8 +72,8 @@ def profile_add():
       
       username = request.form['username']
       fname = request.form['fname']
-      lname = request.form['lname]
-      sex = request.form['sex]
+      lname = request.form['lname']
+      sex = request.form['sex']
       age = request.form['age']
       profile_add_on = request.form['profile_add_on']
       
