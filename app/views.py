@@ -62,7 +62,7 @@ def page_not_found(error):
     
 
 @app.route('/profile/')
-def profile():
+def profile_add():
    #route for adding a profile
    """adding a profile single Profile."""
    form = RegisterForm()#(request.form)
