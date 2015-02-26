@@ -8,7 +8,7 @@
 <div class ="container">
  <form method="POST" action="{{url_for('profile_add')}}">
      {{ form.csrf_token }}
-     Image: {{(form.img, class="input text") }}<br />
+     Image: {{form.img}}<br />
      First Name: {{form.fname }}<br />
      Last Name: {{form.lname, class="input text") }}<br />
      Profile Date:{{form.profile_add_on}}<br />
