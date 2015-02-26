@@ -19,7 +19,8 @@ from app.models import User
 
 @app.route('/',methods=['GET'])
 def home():
-  
+   """Render the website's about page."""
+    return render_template('home.html')
     
 
 
