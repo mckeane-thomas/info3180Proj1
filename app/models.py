@@ -1,7 +1,6 @@
 from app import db
 
 class User(db.Model):
-	__tablename__ = 'users_user'
         userid = db.Column(db.Integer,nullable = False, primary_key=True)
 	username = db.Column(db.String(50), unique=True)
 	#img = db.Column(db.LargeBinary)
