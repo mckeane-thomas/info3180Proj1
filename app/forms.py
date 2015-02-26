@@ -8,11 +8,11 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 
 class RegisterForm(Form):
       #profile_photo =FileField('Profile Image')
-	userID =IntegerField('ID:', [Required()])
+	userid =IntegerField('ID:', [Required()])
 	username = TextField('Username:', [Required()])
 	upload = FileField('image', validators=[FileRequired(),FileAllowed(['jpg', 'png'], 'Images only!')])
-	firstName = TextField('First Name:', [Required()])
-	lastName = TextField('Last Name:', [Required()])
+	fame = TextField('First Name:', [Required()])
+	lname = TextField('Last Name:', [Required()])
 	sex = RadioField(u'Sex', choices=[
         ('M', u'Male'),
         ('F', u'Female')],
