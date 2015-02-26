@@ -78,7 +78,7 @@ def profile_add():
       high_score=request.form['high_score']
       tDollars = request.form['tDollars']
       #profile_add_on = request.form['profile_add_on']
-      newprofile = Profile(username,fname,lname,sex,age,high_score,tDollars)
+      newprofile = Profile(fname,lname)
       #user = User(username=form.username.data, fname=form.fname.data,lname=form.lname.data, sex=form.sex.data, age=form.age.data, high_score=form.high_score.data, tDollars=form.tDollars.data)
       db.session.add(newprofile)
       db.session.commit()
