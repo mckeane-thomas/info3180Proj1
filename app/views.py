@@ -66,7 +66,7 @@ def profile_add():
    #route for adding a profile
    """adding a profile single Profile."""
    form = RegisterForm(request.form)
-   #if request.method =="POST":
+   if request.method =="POST":
       #write to the database
       #img = request.form['img']
       
@@ -76,15 +76,12 @@ def profile_add():
      # sex = request.form['sex']
      # age = request.form['age']
       #profile_add_on = request.form['profile_add_on']
-      
-      
-      
-   if form.validate_on_submit():
+ 
       user = User(username=form.username.data, fname=form.fname.data,lname=form.lname.data, sex=form.sex.data, age=form.age.data, high_score=form.high_score.data, tDollars=form.tDollars.data)
       db.session.add(user)
       db.session.commit()
 
-      session['user_id']=user.id
+      #session['user_id']=user.id
       return "Registration Completed values added to the database"  
       flash('You have been registered')
     
