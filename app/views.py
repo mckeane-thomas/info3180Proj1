@@ -65,19 +65,19 @@ def page_not_found(error):
 def profile_add():
    #route for adding a profile
    """adding a profile single Profile."""
-   form = RegisterForm(request.form)
+   #form = RegisterForm(request.form)
    if request.method =="POST":
       #write to the database
       #img = request.form['img']
       
-      #username = request.form['username']
-      #fname = request.form['fname']
-      #lname = request.form['lname']
-     # sex = request.form['sex']
-     # age = request.form['age']
+      username = request.form['username']
+      fname = request.form['fname']
+      lname = request.form['lname']
+      sex = request.form['sex']
+      age = request.form['age']
       #profile_add_on = request.form['profile_add_on']
- 
-      user = User(username=form.username.data, fname=form.fname.data,lname=form.lname.data, sex=form.sex.data, age=form.age.data, high_score=form.high_score.data, tDollars=form.tDollars.data)
+   user = User(username,fname,lname,sex,age)
+      #user = User(username=form.username.data, fname=form.fname.data,lname=form.lname.data, sex=form.sex.data, age=form.age.data, high_score=form.high_score.data, tDollars=form.tDollars.data)
       db.session.add(user)
       db.session.commit()
 
