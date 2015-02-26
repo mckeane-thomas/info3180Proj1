@@ -86,9 +86,9 @@ def profile_add():
 
       session['user_id']=user.id
       return "Registration Completed values added to the database"  
-      #flash('You have been registered')
+      flash('You have been registered')
     
-      #return redirect(url_for('home'))
+      return redirect(url_for('home'))
    return render_template("profile_add.html", form=form) 
   
 @app.route('/profiles/')
