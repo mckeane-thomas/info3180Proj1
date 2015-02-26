@@ -68,14 +68,14 @@ def profile_add():
    #form = RegisterForm(request.form)
    if request.method =="POST":
       #write to the database
-      img = request.form['img']
+      #img = request.form['img']
       
-      username = request.form['username']
+      #username = request.form['username']
       fname = request.form['fname']
       lname = request.form['lname']
-      sex = request.form['sex']
-      age = request.form['age']
-      profile_add_on = request.form['profile_add_on']
+     # sex = request.form['sex']
+     # age = request.form['age']
+      #profile_add_on = request.form['profile_add_on']
       
       
       
