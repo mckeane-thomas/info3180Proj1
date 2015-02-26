@@ -5,19 +5,19 @@
 {% endblock %}
 
 {% block main %}
-    
- <form method="POST" action="." class="form">
+<div class ="container">
+ <form method="POST" action="{{url_for('profile_add')}}">
      {{ form.csrf_token }}
-     {{ Image: (form.img, class="input text") }}
-     {{ First Name(form.fname, class="input text") }}
-     {{ Last Name(form.lname, class="input text") }}
-     {{ Profile Date: (form.profile_add_on, class="input date") }}
-     {{ Username:(form.username, class="input text") }}
-     {{ Age: (form.age, class="input number") }}
-     {{ Sex: (form.sex, class="input checkbox") }}
-     {{High_Score: (form.high_score, class ="input number")}}
-     {{TDollars:(form.tdollars, class="number") }}
-     <input type="submit" value="Register" class="button green">
+     Image: {{(form.img, class="input text") }}<br />
+     First Name: {{form.fname }}<br />
+     Last Name: {{form.lname, class="input text") }}<br />
+     Profile Date:{{form.profile_add_on}}<br />
+     Username: {{form.username}}<br />
+     Age: {{form.age}}<br />
+     Sex: {{form.sex}} <br />
+     High_Score: {{form.high_score}}<br />
+     TDollars: {{form.tdollars}}<br />
+     <input type="submit" value="Register"/>
    </form>
- 
+ </div>
 {% endblock %}
