@@ -23,14 +23,14 @@ app.config['SECRET_KEY']="sdfhdjksfhgm nm,sfnjkdfsbdjbfkjsbbjasbhdsbfd"
 @app.route('/',methods=['GET'])
 def home():
    """Render the website's about page."""
-    return render_template('home.html')
+return render_template('home.html')
     
 
 
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html')
+return render_template('about.html')
 
 
 ###
@@ -41,7 +41,7 @@ def about():
 def send_text_file(file_name):
     """Send your static text file."""
     file_dot_text = file_name + '.txt'
-    return app.send_static_file(file_dot_text)
+ return app.send_static_file(file_dot_text)
 
 
 @app.after_request
@@ -58,7 +58,7 @@ def add_header(response):
 @app.errorhandler(404)
 def page_not_found(error):
     """Custom 404 page."""
-    return render_template('404.html'), 404
+return render_template('404.html'), 404
     
 
 @app.route('/profile/')
@@ -76,19 +76,19 @@ def page_not_found(error):
          #flash('You have been registered')
     
       return redirect(url_for('home'))
-  return render_template("profile_add.html", form=form) 
+   return render_template("profile_add.html", form=form) 
   
- @app.route('/profiles/')
+@app.route('/profiles/')
    def profile_list():
        #route for adding a profile
       """adding a profile single Profile."""
       
   return render_template("profiles.html", form=form) 
   
-  @app.route('/profile/<int:id>/')
+@app.route('/profile/<int:id>/')
   def single_profile(id):
     #route for viewing a profile by id
-    return "profile {}".format(id)
+  return "profile {}".format(id)
 
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0",port="9999")
