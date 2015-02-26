@@ -16,7 +16,7 @@ class Profile(db.Model):
 
 	def __init__(self,fname, lname):
 	   #self.userid = userid
-	   self.username=username 
+	   #self.username=username 
 	   #self.img = img
 	   self.fname = fname
            self.lname = lname
