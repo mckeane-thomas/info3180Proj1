@@ -10,7 +10,7 @@ from app import app
 from flask import render_template,request,redirect,url_for,flash, session
 from app.forms import RegisterForm
 from app import db
-from app.models import Profile
+from app.models import Profiles
 import time
 
 
@@ -80,7 +80,7 @@ def profile_add():
       #check if user is already created
       #isUser = User.query.filter_by(username=name).first()
       #if(isUser is None):
-      newprofile = Profile(name,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+      newprofile = Profiles(name,fname,lname,age,sex,profile_add_on,high_score,tDollars)
          
       db.session.add(newprofile)
       db.session.commit()
