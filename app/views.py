@@ -67,7 +67,7 @@ def profile_add():
    if request.method == 'POST':
       #write to the database
       
-      
+      name = request.form['username']
       #img = request.form['img']
       fname = request.form['fname']
       lname = request.form['lname']
@@ -78,9 +78,9 @@ def profile_add():
       tDollars = request.form['tDollars']
       
       #check if user is already created
-      isUser = User.query.filter_by(username = request.form['username']).first()
+      isUser = User.query.filter_by(username=name).first()
       if(isUser is None):
-         newprofile = User(username,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+         newprofile = User(name,fname,lname,age,sex,profile_add_on,high_score,tDollars)
          
          db.session.add(newprofile)
          db.session.commit()
