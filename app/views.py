@@ -100,9 +100,10 @@ def dateAdded():
 @app.route('/profiles/')
 def profile_list():
    #route for adding a profile
+   profile_list = Profiles.querya.all()
    """adding a profile single Profile."""
       
-   return render_template("profiles.html", form=form) 
+   return render_template("profiles.html", profiles=profiles) 
   
 @app.route('/profile/<int:id>/')
 def single_profile(id):
