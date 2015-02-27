@@ -10,7 +10,7 @@ class RegisterForm(Form):
       #profile_photo =FileField('Profile Image')
 	userid =IntegerField('ID:', [Required()])
 	username = TextField('Username:', [Required()])
-	img = FileField('image', validators=[FileAllowed(['jpg', 'png'], 'Images only!')])
+	img = FileField('image', validators=[Optional(),FileAllowed(['jpg', 'png'], 'Images only!')])
 	fname = TextField('First Name:', [Required()])
 	lname = TextField('Last Name:', [Required()])
 	sex = RadioField(u'Sex', choices=[
