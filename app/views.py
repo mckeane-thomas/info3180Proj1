@@ -80,13 +80,13 @@ def profile_add():
       #check if user is already created
       #isUser = User.query.filter_by(username=name).first()
       #if(isUser is None):
-         newprofile = User(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+      newprofile = User(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
          
-         db.session.add(newprofile)
-         db.session.commit()
+      db.session.add(newprofile)
+      db.session.commit()
          #session['user_id']=user.id
-         return "Registration Completed values added to the database"  
-         flash("New Profile added")
+      return "Registration Completed values added to the database"  
+      flash("New Profile added")
       #else:
        #  flash("Profile could not be Created, Username Already Exist")
    #else:  
