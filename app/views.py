@@ -100,10 +100,10 @@ def dateAdded():
 @app.route('/profiles/')
 def profile_list():
    #route for adding a profile
-   profile_list = Profiles.query.all()
+   list_profiles = Profiles.query.all()
    """adding a profile single Profile."""
       
-   return render_template("profiles.html", profiles=profiles) 
+   return render_template("profiles.html", list_profiles=list_profiles) 
   
 @app.route('/profile/<int:id>/')
 def single_profile(id):
