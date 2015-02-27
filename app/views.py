@@ -78,9 +78,9 @@ def profile_add():
       tDollars = request.form['tDollars']
       
       #check if user is already created
-      isUser = Profile.query.filter_by(username).first()
+      isUser = Profile.query.filter_by(name = username).first()
       if(isUser is None):
-         newprofile = Profile(username,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+         newprofile = Profile(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
          
          db.session.add(newprofile)
          db.session.commit()
