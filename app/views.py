@@ -95,7 +95,7 @@ def profile_add():
 
 def dateAdded():
    date_add=time.strftime("%a,%d,%b,%Y")
-   return date_added
+   return date_add
   
 @app.route('/profiles/')
 def profile_list():
