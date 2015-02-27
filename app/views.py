@@ -68,7 +68,7 @@ def profile_add():
       #write to the database
       
       name = request.form['username']
-      #img = request.form['img']
+      img = request.form['img']
       fname = request.form['fname']
       lname = request.form['lname']
       age = request.form['age']
@@ -78,20 +78,20 @@ def profile_add():
       tDollars = request.form['tDollars']
       
       #check if user is already created
-      isUser = User.query.filter_by(username=name).first()
-      if(isUser is None):
-         newprofile = User(name,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+      #isUser = User.query.filter_by(username=name).first()
+      #if(isUser is None):
+         newprofile = User(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
          
          db.session.add(newprofile)
          db.session.commit()
          #session['user_id']=user.id
          return "Registration Completed values added to the database"  
          flash("New Profile added")
-      else:
-         flash("Profile could not be Created, Username Already Exist")
-   else:  
+      #else:
+       #  flash("Profile could not be Created, Username Already Exist")
+   #else:  
       #return redirect(url_for('home'))
-      return render_template("profile_add.html", form=form) 
+   return render_template("profile_add.html", form=form) 
 
 def dateAdded():
    date_add=time.strftime("%a,%d,%b,%Y")
