@@ -20,8 +20,8 @@ class Profile(db.Model):
 	   self.img = img
 	   self.fname = fname
            self.lname = lname
-           self.sex = sex
            self.age = age
+           self.sex = sex
            self.profile_add_on=profile_add_on
            self.high_score=high_score
            self.tDollars=tDollars
