@@ -70,8 +70,8 @@ def profile_add():
       img = request.form['img']
       fname = request.form['fname']
       lname = request.form['lname']
-      sex = request.form['sex']
       age = request.form['age']
+      sex = request.form['sex']
       high_score=request.form['high_score']
       profile_add_on = dateAdded()
       tDollars = request.form['tDollars']
