@@ -3,7 +3,7 @@ from . import db
 class User(db.Model):
         id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(50), unique=True)
-	img = db.Column(db.LargeBinary)
+	#img = db.Column(db.LargeBinary)
         fname = db.Column(db.String(50))
         lname = db.Column(db.String(50))
         age = db.Column(db.Integer)
@@ -14,10 +14,10 @@ class User(db.Model):
 	
 
 
-	def __init__(self,username,img,fname,lname,age,sex,profile_add_on,high_score,tDollars):
+	def __init__(self,username,fname,lname,age,sex,profile_add_on,high_score,tDollars):
 	   #self.userid = userid
 	   self.username=username 
-	   self.img = img
+	   #self.img = img
 	   self.fname = fname
            self.lname = lname
            self.age = age
