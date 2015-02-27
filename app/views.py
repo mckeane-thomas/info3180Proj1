@@ -17,9 +17,6 @@ from app.models import Profile
 # Routing for your application.
 ###
 
-app.config['SECRET_KEY']="sdfhdjksfhgm nm,sfnjkdfsbdjbfkjsbbjasbhdsbfd"
-
-
 @app.route('/',methods=['GET'])
 def home():
    """Render the website's about page."""
