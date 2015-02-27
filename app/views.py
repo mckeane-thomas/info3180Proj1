@@ -94,7 +94,7 @@ def profile_add():
    return render_template("profile_add.html", form=form) 
 
 def dateAdded():
-   date_add=time.strftime("%a,%d,%b,%Y")
+   date_add=time.strftime("%a, %d  %b  %Y")
    return date_add
   
 @app.route('/profiles/')
