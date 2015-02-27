@@ -80,7 +80,7 @@ def profile_add():
       isUser = Profile.query.filter_by(username).first()
       if(isUser is None):
          newprofile = Profile(username,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
-         #user = User(username=form.username.data, fname=form.fname.data,lname=form.lname.data, sex=form.sex.data, age=form.age.data, high_score=form.high_score.data, tDollars=form.tDollars.data)
+         
          db.session.add(newprofile)
          db.session.commit()
          #session['user_id']=user.id
