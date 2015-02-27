@@ -7,7 +7,7 @@ This file creates your application.
 """
 
 from app import app
-from flask import render_template,request,redirect,url_for, Blueprint,flash, g, session
+from flask import render_template,request,redirect,url_for,flash, session
 from app.forms import RegisterForm
 from app import db
 from app.models import Profile
@@ -67,29 +67,34 @@ def profile_add():
       #write to the database
       
       username = request.form['username']
-      #img = request.form['img']
+      img = request.form['img']
       fname = request.form['fname']
       lname = request.form['lname']
       sex = request.form['sex']
       age = request.form['age']
       high_score=request.form['high_score']
+      profile_add_on = dateAdded()
       tDollars = request.form['tDollars']
-      #profile_add_on = request.form['profile_add_on']
-      newprofile = Profile(username,fname,lname,sex,age,high_score,tDollars)
-      #user = User(username=form.username.data, fname=form.fname.data,lname=form.lname.data, sex=form.sex.data, age=form.age.data, high_score=form.high_score.data, tDollars=form.tDollars.data)
-      db.session.add(newprofile)
-      db.session.commit()
-
-      #session['user_id']=user.id
-      return "Registration Completed values added to the database"  
-      #flash('You have been registered')
-    
+      
+      #check if user is already created
+      isUser = Profile.query.filter_by(username).first()
+      if(isUser is None):
+         newprofile = Profile(username,img,fname,lname,sex,age,profile_add_on,high_score,tDollars)
+         #user = User(username=form.username.data, fname=form.fname.data,lname=form.lname.data, sex=form.sex.data, age=form.age.data, high_score=form.high_score.data, tDollars=form.tDollars.data)
+         db.session.add(newprofile)
+         db.session.commit()
+         #session['user_id']=user.id
+         return "Registration Completed values added to the database"  
+         flash("New Profile added")
+      else:
+         flash("Profile could not be Created, Username Already Exist")
+   else:  
       #return redirect(url_for('home'))
-   return render_template("profile_add.html", form=form) 
+      return render_template("profile_add.html", form=form) 
 
-#def dateAdded():
- #  date_add=time.strftime("%a,%d,%b,%y")
-  # return date_added
+def dateAdded():
+   date_add=time.strftime("%d,%m,%y,%t")
+   return date_added
   
 @app.route('/profiles/')
 def profile_list():
