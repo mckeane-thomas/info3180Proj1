@@ -136,7 +136,8 @@ def json_profiles(id):
             sex=result.sex,
             age=result.age,
             profile_add_on=result.profile_add_on,
-            high_score=result.high_score
+            high_score=result.high_score,
+            tDollars=result.tDollars
             }
    #if id in Profiles if ID is in the datbase table
    #jsonify the id in the format: 
