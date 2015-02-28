@@ -7,7 +7,7 @@ This file creates your application.
 """
 
 from app import app
-from flask import render_template,request,redirect,url_for,flash, session
+from flask import render_template,request,redirect,url_for,flash, session,jsonify
 from app.forms import RegisterForm
 from app import db
 from app.models import Profiles
@@ -111,6 +111,26 @@ def single_profile(id):
    return render_template("profile_view.html", profile=profile)
     #route for viewing a profile by id
     #return "profile {}".format(id)
+
+app.route('profiles/', methods =['GET'])
+def jsonProfile():
+   if request.method='GET'
+      return jsonify('users:(username=g.Profiles.username, userid=g.Profiles.id)')
+         
+
+app.route('/profile/<int:id>/')      
+def json_profiles(id):
+   #if id in Profiles if ID is in the datbase table
+   #jsonify the id in the format: 
+   #return jsonify({userid=g.Profiles.id,
+                  #username = g.Profiles.username,
+                  #image = g.Profiles.image,
+                  #sex = g.Profiles.sex,
+                  #age = g.Profiles.age })
+                  #profile_add_on=g.Profiles.profile_add_on
+                  ##high_score=g.Profiles.high_score})
+                  
+                  
 
 if __name__ == '__main__': 
     app.run(debug=True,host="0.0.0.0",port="9999")
