@@ -117,8 +117,12 @@ def jsonProfile():
    
    if request.method='POST'
       all_users = Profiles.query.all()
+      results = []
       for user in all_users
-      return jsonify({'users:{username=g.Profiles.username, userid=g.Profiles.id}'})
+         d ={'username': results.username, 'userid': results.id}
+         results.append[d]
+      return jsonify(users=results)
+     
          
 
 app.route('/profile/<int:id>/', methods = ['GET'])      
