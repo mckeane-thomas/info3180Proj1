@@ -114,25 +114,26 @@ def single_profile(id):
 
 app.route('profiles/', methods =['GET'])
 def jsonProfile():
-   if request.method='GET'
-      return jsonify('users:(username=g.Profiles.username, userid=g.Profiles.id)')
+   
+   if request.method='POST'
+      all_users = Profiles.query.all()
+      for user in all_users
+      return jsonify({'users:{username=g.Profiles.username, userid=g.Profiles.id}'})
          
 
 app.route('/profile/<int:id>/', methods = ['GET'])      
 def json_profiles(id):
    if request.method =="POST"
-   results = Profiles.query.all()
-   json_list =[]
-   for result in results:
+      results = Profiles.query.get(id)
       jsonify{
-         userid=result.id,
-         username=result.username,
-         image=result.img,
-         sex=result.sex,
-         age=result.age,
-         profile_add_on=result.profile_add_on,
-         high_score=result.high_scoe
-         }
+            userid=result.id,
+            username=result.username,
+            image=result.img,
+            sex=result.sex,
+            age=result.age,
+            profile_add_on=result.profile_add_on,
+            high_score=result.high_score
+            }
    #if id in Profiles if ID is in the datbase table
    #jsonify the id in the format: 
    #return jsonify({userid=g.Profiles.id,
