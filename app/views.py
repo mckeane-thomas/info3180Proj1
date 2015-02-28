@@ -107,8 +107,10 @@ def profile_list():
   
 @app.route('/profile/<int:id>/')
 def single_profile(id):
+   Profiles.query.get(id)
+   return render_template(profile_view.html, profile=profile)
     #route for viewing a profile by id
-    return "profile {}".format(id)
+    #return "profile {}".format(id)
 
 if __name__ == '__main__': 
     app.run(debug=True,host="0.0.0.0",port="9999")
