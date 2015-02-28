@@ -132,7 +132,7 @@ def json_profiles(id):
       jsonify{
             userid=result.id,
             username=result.username,
-            image=result.img,
+            #image=result.img,
             sex=result.sex,
             age=result.age,
             profile_add_on=result.profile_add_on,
@@ -150,6 +150,21 @@ def json_profiles(id):
                   ##high_score=g.Profiles.high_score})
                   
                   
+                  
+app.route('/profile/<int:id>/', methods = ['POST'])      
+def json_profiles(id):
+   if request.method =="POST"
+      results = Profiles.query.get(id)
+      jsonify{
+            userid=result.id,
+            username=result.username,
+            image=result.img,
+            sex=result.sex,
+            age=result.age,
+            profile_add_on=result.profile_add_on,
+            high_score=result.high_score,
+            tDollars=result.tDollars
+            }
 
 if __name__ == '__main__': 
     app.run(debug=True,host="0.0.0.0",port="9999")
