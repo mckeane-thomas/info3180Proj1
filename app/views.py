@@ -118,8 +118,21 @@ def jsonProfile():
       return jsonify('users:(username=g.Profiles.username, userid=g.Profiles.id)')
          
 
-app.route('/profile/<int:id>/')      
+app.route('/profile/<int:id>/', methods = ['GET'])      
 def json_profiles(id):
+   if request.method =="POST"
+   results = Profiles.query.all()
+   json_list =[]
+   for result in results:
+      jsonify{
+         userid=result.id,
+         username=result.username,
+         image=result.img,
+         sex=result.sex,
+         age=result.age,
+         profile_add_on=result.profile_add_on,
+         high_score=result.high_scoe
+         }
    #if id in Profiles if ID is in the datbase table
    #jsonify the id in the format: 
    #return jsonify({userid=g.Profiles.id,
