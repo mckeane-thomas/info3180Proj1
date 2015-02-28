@@ -114,7 +114,7 @@ def single_profile(id):
 
 app.route('profiles/', methods =['GET'])
 def jsonProfile():
-   if request.method=="GET"
+   if request.method=='POST':
       all_users = Profiles.query.all()
       results = []
       for user in all_users
@@ -126,7 +126,7 @@ def jsonProfile():
 
 app.route('/profile/<int:id>/', methods = ['GET'])      
 def json_profiles(id):
-   if request.method =="POST"
+   if request.method =="POST":
       results = Profiles.query.get(id)
       jsonify{
             userid=result.id,
@@ -152,7 +152,7 @@ def json_profiles(id):
                   
 app.route('/profile/<int:id>/', methods = ['POST'])      
 def json_profiles(id):
-   if request.method =="POST"
+   if request.method =="POST":
       results = Profiles.query.get(id)
       jsonify{
             userid=result.id,
