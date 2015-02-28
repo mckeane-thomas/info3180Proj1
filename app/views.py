@@ -68,7 +68,7 @@ def profile_add():
       #write to the database
       
       name = request.form['username']
-      img = request.form['img']
+      #img = request.form['img']
       fname = request.form['fname']
       lname = request.form['lname']
       age = request.form['age']
