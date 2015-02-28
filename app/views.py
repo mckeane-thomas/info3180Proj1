@@ -107,7 +107,7 @@ def profile_list():
   
 @app.route('/profile/<int:id>/')
 def single_profile(id):
-   Profiles.query.get(id)
+   profile = Profiles.query.get(id)
    return render_template("profile_view.html", profile=profile)
     #route for viewing a profile by id
     #return "profile {}".format(id)
