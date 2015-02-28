@@ -128,7 +128,7 @@ app.route('/profile/<int:id>/', methods = ['GET'])
 def json_profiles(id):
    if request.method =="POST":
       results = Profiles.query.get(id)
-      jsonify{
+      jsonify(
             userid=result.id,
             username=result.username,
             #image=result.img,
@@ -137,7 +137,7 @@ def json_profiles(id):
             profile_add_on=result.profile_add_on,
             high_score=result.high_score,
             tDollars=result.tDollars
-            }
+            )
    #if id in Profiles if ID is in the datbase table
    #jsonify the id in the format: 
    #return jsonify({userid=g.Profiles.id,
@@ -154,7 +154,7 @@ app.route('/profile/<int:id>/', methods = ['POST'])
 def json_profiles(id):
    if request.method =="POST":
       results = Profiles.query.get(id)
-      jsonify{
+      jsonify(
             userid=result.id,
             username=result.username,
             image=result.img,
@@ -163,7 +163,7 @@ def json_profiles(id):
             profile_add_on=result.profile_add_on,
             high_score=result.high_score,
             tDollars=result.tDollars
-            }
+            )
 
 if __name__ == '__main__': 
     app.run(debug=True,host="0.0.0.0",port="9999")
