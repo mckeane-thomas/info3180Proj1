@@ -115,7 +115,7 @@ def single_profile(id):
 app.route('profiles/', methods =['GET'])
 def jsonProfile():
    
-   if request.method='POST'
+   if request.method=='POST'
       all_users = Profiles.query.all()
       results = []
       for user in all_users
