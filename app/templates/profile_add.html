@@ -10,6 +10,9 @@
      {{ form.csrf_token }}
      Image: {{form.img}}<br />
      First Name: {{form.fname }}<br />
+     {% for error in form.fname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
      Last Name: {{form.lname}}<br />
      <!--Profile Date:{{form.profile_add_on}}<br />-->
      Username: {{form.username}}<br />
