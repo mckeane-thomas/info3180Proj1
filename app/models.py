@@ -1,6 +1,6 @@
 from . import db
 
-class ProfileDB(db.Model):
+class Profiles(db.Model):
         id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(50), unique=True)
 	img = db.Column(db.LargeBinary)
@@ -30,4 +30,4 @@ class ProfileDB(db.Model):
            
 
         def __repr__(self):
-	    return '<ProfileDB %r %r>' %(self.fname, self.lname)
+	    return '<Profile %r %r>' %(self.fname, self.lname)
