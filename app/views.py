@@ -67,7 +67,7 @@ def profile_add():
    if request.method == 'POST':
       #write to the database
       name = request.form['username']
-      #img = request.form['img']
+      img = request.form['img']
       fname = request.form['fname']
       lname = request.form['lname']
       age = request.form['age']
