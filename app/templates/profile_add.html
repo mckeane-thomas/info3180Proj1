@@ -11,11 +11,17 @@
      Image: {{form.img}}<br />
      First Name: {{form.fname }}<br />
      {% for error in form.fname.errors %}
-            <span style="color: red;">[{{ "First Name Required" }}]</span>
+            <span style="color: red;">{{ "First Name Required" }}</span>
           {% endfor %}<br>
      Last Name: {{form.lname}}<br />
+     {% for error in form.lname.errors %}
+            <span style="color: red;">{{ "Last Name Required" }}</span>
+          {% endfor %}<br>
      <!--Profile Date:{{form.profile_add_on}}<br />-->
      Username: {{form.username}}<br />
+     {% for error in form.username.errors %}
+            <span style="color: red;">{{ "Username Required" }}</span>
+          {% endfor %}<br>
      Age: {{form.age}}<br />
      Sex: {{form.sex}} <br />
      High_Score: {{form.high_score}}<br />
