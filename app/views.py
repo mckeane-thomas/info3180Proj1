@@ -89,7 +89,7 @@ def profile_add():
          return "Registration Completed values added to the database"  
          flash("New Profile added")
       else:
-         flash("Profile could not be Created Fill in required fields")
+         return("Profile could not be Created Fill in required fields")
    #else:  
       #return redirect(url_for('home'))
    return render_template("profile_add.html", form=form) 
