@@ -64,35 +64,33 @@ def profile_add():
    #route for adding a profile
    """adding a profile single Profile."""
    form = RegisterForm()
-   if request.method == 'POST':
-      if form.validate_on_submit():
+   if request.method == 'POST' and form.validate_on_submit():
       #write to the database
-      
-         name = request.form['username']
-         #img = request.form['img']
-         fname = request.form['fname']
-         lname = request.form['lname']
-         age = request.form['age']
-         sex = request.form['sex']
-         high_score=request.form['high_score']
-         profile_add_on = dateAdded()
-         tDollars = request.form['tDollars']
+      name = request.form['username']
+      #img = request.form['img']
+      fname = request.form['fname']
+      lname = request.form['lname']
+      age = request.form['age']
+      sex = request.form['sex']
+      high_score=request.form['high_score']
+      profile_add_on = dateAdded()
+      tDollars = request.form['tDollars']
       
       #check if user is already created
       #isUser = User.query.filter_by(username=name).first()
       #if(isUser is None):
-         newprofile = Profiles(name,fname,lname,age,sex,profile_add_on,high_score,tDollars)
-         
-         db.session.add(newprofile)
-         db.session.commit()
-         #session['user_id']=user.id
-         return "Registration Completed values added to the database"  
-         flash("New Profile added")
-      else:
-         return("Profile could not be Created Fill in required fields")
+      newprofile = Profiles(name,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+      
+      db.session.add(newprofile)
+      db.session.commit()
+      #session['user_id']=user.id
+      return "Registration Completed values added to the database"  
+      flash("New Profile added")
+   else:
+      return("Profile could not be Created Fill in required fields")
    #else:  
-      #return redirect(url_for('home'))
-   return render_template("profile_add.html", form=form) 
+   #return redirect(url_for('home'))
+return render_template("profile_add.html", form=form) 
 
 def dateAdded():
    date_add=time.strftime("%a  %d  %b  %Y")
