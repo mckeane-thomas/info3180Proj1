@@ -3,7 +3,7 @@ from . import db
 class dataProfile(db.Model):
         id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(50), unique=True)
-	img = db.Column(db.bytea(50))
+	img = db.Column(db.Bytea(50))
         fname = db.Column(db.String(50))
         lname = db.Column(db.String(50))
         age = db.Column(db.Integer)
