@@ -30,4 +30,4 @@ class ProfileDB(db.Model):
            
 
         def __repr__(self):
-	    return '<Profiles %r %r>' %(self.fname, self.lname)
+	    return '<ProfileDB %r %r>' %(self.fname, self.lname)
