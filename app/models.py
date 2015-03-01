@@ -14,7 +14,7 @@ class ProfileDB(db.Model):
 	
 
 
-	def __init__(self,username,fname,lname,age,sex,profile_add_on,high_score,tDollars):
+	def __init__(self,username,self.img,fname,lname,age,sex,profile_add_on,high_score,tDollars):
 	   #self.userid = userid
 	   self.username=username 
 	   self.img = img
