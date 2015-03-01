@@ -88,8 +88,8 @@ def profile_add():
          #session['user_id']=user.id
          return "Registration Completed values added to the database"  
          flash("New Profile added")
-      #else:
-       #  flash("Profile could not be Created, Username Already Exist")
+      else:
+         flash("Profile could not be Created Fill in required fields")
    #else:  
       #return redirect(url_for('home'))
    return render_template("profile_add.html", form=form) 
