@@ -1,6 +1,6 @@
 from . import db
 
-class Profiles(db.Model):
+class ProfileDB(db.Model):
         id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(50), unique=True)
 	img = db.Column(db.LargeBinary)
