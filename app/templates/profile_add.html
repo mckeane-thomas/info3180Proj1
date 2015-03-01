@@ -23,6 +23,9 @@
             <span style="color: red;">{{ "Username Required" }}</span>
           {% endfor %}<br>
      Age: {{form.age}}<br />
+      {% for error in form.age.errors %}
+            <span style="color: red;">{{ "Age Required" }}</span>
+          {% endfor %}<br>
      Sex: {{form.sex}} <br />
      High_Score: {{form.high_score}}<br />
      TDollars: {{form.tDollars}}<br />
