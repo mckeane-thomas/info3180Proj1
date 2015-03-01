@@ -11,7 +11,7 @@
      Image: {{form.img}}<br />
      First Name: {{form.fname }}<br />
      {% for error in form.fname.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            <span style="color: red;">[{{ "First Name Required" }}]</span>
           {% endfor %}<br>
      Last Name: {{form.lname}}<br />
      <!--Profile Date:{{form.profile_add_on}}<br />-->
