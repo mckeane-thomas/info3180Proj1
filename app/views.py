@@ -10,7 +10,7 @@ from app import app
 from flask import render_template,request,redirect,url_for,flash, session,jsonify
 from app.forms import RegisterForm
 from app import db
-from app.models import Profiles
+from app.models import ProfileDB
 import time
 
 
@@ -81,7 +81,7 @@ def profile_add():
       #check if user is already created
       #isUser = User.query.filter_by(username=name).first()
       #if(isUser is None):
-         newprofile = Profiles(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+         newprofile = ProfileDB(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
          
          db.session.add(newprofile)
          db.session.commit()
@@ -108,7 +108,7 @@ def profile_list():
   
 @app.route('/profile/<int:id>/')
 def single_profile(id):
-   profile = Profiles.query.get(id)
+   profile = ProfileDB.query.get(id)
    return render_template("profile_view.html", profile=profile)
     #route for viewing a profile by id
     #return "profile {}".format(id)
@@ -116,7 +116,7 @@ def single_profile(id):
 app.route('profiles/', methods =['GET'])
 def jsonProfile():
    if request.method=='POST':
-      all_users = Profiles.query.all()
+      all_users = ProfileDB.query.all()
       results = []
       for user in all_users:
          d ={'username': results.username, 'userid': results.id}
@@ -128,7 +128,7 @@ def jsonProfile():
 app.route('/profile/<int:id>/', methods = ['GET'])      
 def json_profiles(id):
    if request.method =="POST":
-      results = Profiles.query.get(id)
+      results = ProfileDB.query.get(id)
       jsonify(
             userid=result.id,
             username=result.username,
@@ -154,7 +154,7 @@ def json_profiles(id):
 app.route('/profile/<int:id>/', methods = ['POST'])      
 def json_profiles(id):
    if request.method =="POST":
-      results = Profiles.query.get(id)
+      results = ProfileDB.query.get(id)
       jsonify(
             userid=result.id,
             username=result.username,
