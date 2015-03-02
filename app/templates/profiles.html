@@ -6,11 +6,11 @@
   <ul>
   {%for profiles in list_profiles%}
   <li>
-   <a href ="profile/>{{profiles.id}}"></a>
-   {{profiles.fname}}{{profiles.lname}}
-   {{profiles.username}}{{profiles.age}}
-   {{profiles.sex}}{{profiles.profile_add_on}}
-   {{profiles.high_score}}{{profiles.tDollars}}
+   <a href ="/profile/{{profiles.id}}">{{profiles.fname}} {{profiles.lname}}</a>
+  
+   {{profiles.username}} {{profiles.age}}
+   {{profiles.sex}} {{profiles.profile_add_on}}
+   {{profiles.high_score}} {{profiles.tDollars}}
   </li>
   {%endfor%}}
   </ul>
