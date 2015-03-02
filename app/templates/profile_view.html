@@ -2,21 +2,26 @@
   {% block js %}{% endblock %} 
     {% block main %}
     <div class = "container">
-    <h2>{{profile.id}} </h2>
+    
     
      <div id="LeftCol">
         <div id="Photo"> <img alt="Image" src={{img}} height="200" width="200"> </div>
        
     </div>
       <div>
-        <p>  
-           <span>{{profile.fname}} {{profile.lname}} </span>
+      	<p>  
+           <span>{{Full Name: profile.id}} </span>
         </p>
+      
+        <p>  
+           <span>{{Full Name: profile.fname}} {{profile.lname}} </span>
+        </p>
+        
     </div>
 <div id="Info1">        
       
 	 <p>            
-            <span>{{profile.profile_add_on}}</span>
+            <span>{{Date: profile.profile_add_on}}</span>
         </p>
 		
 
