@@ -8,7 +8,8 @@
 <div class ="container">
  <form  action="{{ url_for('profile_add') }}" method="POST"  enctype="multipart/form-data">
      {{ form.csrf_token }}
-     Image: {{form.img}}<br>
+     <!--Image: {{form.img}}<br>-->
+     <p><input type=file name=file>
      First Name: {{form.fname }}<br>
      {% for error in form.fname.errors %}
             <span style="color: red;">{{ "First Name Required" }}</span>
