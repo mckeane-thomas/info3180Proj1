@@ -109,7 +109,7 @@ def profile_list():
       all_users =  ProfileData.query.all()
       results = []
       for user in all_users:
-         d ={'username': results.username, 'userid': results.id}
+         d ={'username': user.username, 'userid': user.id}
          results.append[d]
       return jsonify(users=results)
    #route for adding a profile
