@@ -78,7 +78,7 @@ def profile_add():
       
       img = request.files['img']
       if img:
-         filename = username+'_'+secure_filename(img.filename)
+         filename = name+'_'+secure_filename(img.filename)
          img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
       
       newprofile = profileData(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
