@@ -15,6 +15,8 @@ from app.models import profileData
 import time
 
 
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
+
 ###
 # Routing for your application.
 ###
@@ -93,6 +95,9 @@ def profile_add():
    #else:  
    #return redirect(url_for('home'))
    return render_template("profile_add.html", form=form) 
+   
+def file_allowed(filename):
+   return '.' in filename and filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS
 
 def dateAdded():
    date_add=time.strftime("%a  %d  %b  %Y")
