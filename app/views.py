@@ -11,7 +11,7 @@ from flask import render_template,request,redirect,url_for,flash, session,jsonif
 from app.forms import RegisterForm
 from werkzeug import secure_filename
 from app import db
-from app.models import profileData
+from app.models import Profiles
 import time
 
 
@@ -83,7 +83,7 @@ def profile_add():
          filename = name+'_'+secure_filename(file.filename)
          file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
       
-      newprofile = profileData(name,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+      newprofile = Profiles(name,fname,lname,age,sex,profile_add_on,high_score,tDollars)
       
       db.session.add(newprofile)
       db.session.commit()
@@ -106,14 +106,14 @@ def dateAdded():
 @app.route('/profiles/')
 def profile_list():
    #route for adding a profile
-   list_profiles = profileData.query.all()
+   list_profiles = Profiles.query.all()
    """adding a profile single Profile."""
       
    return render_template("profiles.html", list_profiles=list_profiles) 
   
 @app.route('/profile/<int:id>/')
 def single_profile(id):
-   profile = profileData.query.get(id)
+   profile = Profiles.query.get(id)
    img = profile_image(profile)
    time = dateAdded()
    return render_template("profile_view.html", profile=profile,time=time,img=img)
@@ -128,7 +128,7 @@ def profile_image(filename):
 app.route('profiles/', methods =['GET'])
 def jsonProfile():
    if request.method=='POST':
-      all_users = profileData.query.all()
+      all_users = Profiles.query.all()
       results = []
       for user in all_users:
          d ={'username': results.username, 'userid': results.id}
@@ -140,7 +140,7 @@ def jsonProfile():
 app.route('/profile/<int:id>/', methods = ['GET'])      
 def json_profiles(id):
    if request.method =="POST":
-      results = profileData.query.get(id)
+      results = Profiles.query.get(id)
       jsonify(
             userid=result.id,
             username=result.username,
@@ -166,7 +166,7 @@ def json_profiles(id):
 app.route('/profile/<int:id>/', methods = ['POST'])      
 def json_profiles(id):
    if request.method =="POST":
-      results = profileData.query.get(id)
+      results = Profiles.query.get(id)
       jsonify(
             userid=result.id,
             username=result.username,
