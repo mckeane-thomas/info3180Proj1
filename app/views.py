@@ -12,7 +12,7 @@ from app.forms import RegisterForm
 from werkzeug import secure_filename
 from app import db
 from app.models import  ProfileData
-import time
+import time, string
 
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
