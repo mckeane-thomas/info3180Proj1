@@ -4,7 +4,7 @@ from flask.ext.wtf import Form
 from wtforms.fields import TextField, IntegerField, DateField, RadioField
 from wtforms.validators import Required, Optional
 from flask_wtf.file import FileField, FileAllowed, FileRequired
-from flaskext.uploads import UploadSet, IMAGES
+#from flaskext.uploads import UploadSet, IMAGES
  
 #images = UploadSet('images', IMAGES)
 
