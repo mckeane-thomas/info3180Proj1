@@ -78,10 +78,10 @@ def profile_add():
       profile_add_on = dateAdded()
       tDollars = request.form['tDollars']
       
-      img = request.files['img']
-      if img and file_allowed(img.filename):
-         filename = name+'_'+secure_filename(img.filename)
-         img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+      file = request.files['file']
+      if file and file_allowed(file.filename):
+         filename = name+'_'+secure_filename(file.filename)
+         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
       
       newprofile = profileData(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
       
