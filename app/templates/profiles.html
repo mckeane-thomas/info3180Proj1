@@ -14,8 +14,9 @@
   </li>
   {%endfor%}
   </ul>
-  
+  <form  action="{{ url_for('profiles') }}" method="POST">
   <p>View All profile here: <a href ="/profiles/">Members List</a></p>
+  </form>
   </div>
   
   {%endblock%}
