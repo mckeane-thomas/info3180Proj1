@@ -1,0 +1,105 @@
+
+#ProfilePage
+{
+    /* Move it off the top of the page, then centre it horizontally */
+    margin: 50px auto;
+    width: 100%;
+
+}
+
+#LeftCol
+{
+    /* Move it to the left */
+    float: left;
+
+    width: 200px;
+    text-align: left;
+
+    /* Move it away from the content */
+    margin-right: 30px;
+
+
+}
+
+#Photo
+{
+    /* Width and height of photo container */
+    width: 200px;
+    height: 200px;
+
+}
+
+
+
+#Info
+{
+    width: 250px;
+    text-align: center; 
+
+    float: left;
+background-color: yellow;
+
+border: 3px solid gray;
+}
+
+#Info1
+{
+    width: 250px;
+    text-align: center; 
+
+    float: left;
+  background-color: yellow;
+margin-top: 100px;
+margin-left:-252px;
+
+
+border: 3px solid gray;
+}
+
+#Info2
+{
+width: 250px;
+text-align: center; 
+float: left;
+background-color: yellow;
+margin-top: 150px;
+margin-left:-252px;
+
+border: 3px solid gray;
+}
+
+#Info span
+{
+    /* Give it a width */
+    display: inline-block;
+    width: 250px;
+    float: left;
+    margin: 0px 5px 10px -50px;
+
+
+}
+
+
+#Info1 span
+{
+    /* Give it a width */
+    display: inline-block;
+    width: 250px;
+    float: left;
+    margin: 0px 5px 10px -70px;
+
+
+}
+
+
+#Info2 span
+{
+    /* Give it a width */
+    display: inline-block;
+    width: 250px;
+    float: right
+    margin: 10px 50px 50px -60px;
+    text-align: left;
+
+
+}
