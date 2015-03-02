@@ -2,7 +2,51 @@
   {% block js %}{% endblock %} 
     {% block main %}
     <div class = "container">
-    <h2>{{profile.id}} {{profile.fname}} {{profile.lname}} </h2>
+    <h2>{{profile.id}} </h2>
+      <div>
+        <p>  
+            <img alt="Image" src={{img}} />
+            <span>{{profile.fname}} {{profile.lname}} </span>
+        </p>
+    </div>
+<div id="Info1">        
       
+	 <p>            
+            <span>{{profiles.profile_add_on}}</span>
+        </p>
+		
+
+    </div>
+<div id="Info2">        
+      
+	 <p>            
+            <span>Username:{{profiles.username}}</span>
+        </p>
+<p>            
+            <span></span>
+        </p>
+<p>            
+            <span>Sex: {{profiles.sex}}</span>
+        </p>
+<p>            
+            <span>Age:{{profiles.sex}}</span>
+        </p>
+		
+<p>            
+            <span>High Score: {{profiles.high_score}}</span>
+        </p>
+<p>            
+            <span>TDollars:{{profiles.tDollars}}</span>
+        </p>
+		
+		
+		
+		
+
+    </div>
+
+    <!-- Needed because other elements inside ProfilePage have floats -->
+    <div style="clear:both"></div>
+</div>
     </div>
       {% endblock %}
