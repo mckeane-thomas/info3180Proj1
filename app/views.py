@@ -83,7 +83,7 @@ def profile_add():
          filename = name+'_'+secure_filename(file.filename)
          file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
       
-      newprofile = Profiles(name,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+      newprofile = Profiles(name,file,fname,lname,age,sex,profile_add_on,high_score,tDollars)
       
       db.session.add(newprofile)
       db.session.commit()
