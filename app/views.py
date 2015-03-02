@@ -10,7 +10,7 @@ from app import app
 from flask import render_template,request,redirect,url_for,flash, session,jsonify
 from app.forms import RegisterForm
 from app import db
-from app.models import dataProfile
+from app.models import profileData
 import time
 
 
@@ -79,7 +79,7 @@ def profile_add():
       #check if user is already created
       #isUser = User.query.filter_by(username=name).first()
       #if(isUser is None):
-      newprofile = dataProfile(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+      newprofile = profileData(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
       
       db.session.add(newprofile)
       db.session.commit()
@@ -99,14 +99,14 @@ def dateAdded():
 @app.route('/profiles/')
 def profile_list():
    #route for adding a profile
-   list_profiles = dataProfile.query.all()
+   list_profiles = profileData.query.all()
    """adding a profile single Profile."""
       
    return render_template("profiles.html", list_profiles=list_profiles) 
   
 @app.route('/profile/<int:id>/')
 def single_profile(id):
-   profile = dataProfile.query.get(id)
+   profile = profileData.query.get(id)
    img = profile_image(profile)
    time = dateAdded()
    return render_template("profile_view.html", profile=profile,time=time,img=img)
@@ -121,7 +121,7 @@ def profile_image(img_name):
 app.route('profiles/', methods =['GET'])
 def jsonProfile():
    if request.method=='POST':
-      all_users = dataProfile.query.all()
+      all_users = profileData.query.all()
       results = []
       for user in all_users:
          d ={'username': results.username, 'userid': results.id}
@@ -133,7 +133,7 @@ def jsonProfile():
 app.route('/profile/<int:id>/', methods = ['GET'])      
 def json_profiles(id):
    if request.method =="POST":
-      results = dataProfile.query.get(id)
+      results = profileData.query.get(id)
       jsonify(
             userid=result.id,
             username=result.username,
@@ -159,7 +159,7 @@ def json_profiles(id):
 app.route('/profile/<int:id>/', methods = ['POST'])      
 def json_profiles(id):
    if request.method =="POST":
-      results = dataProfile.query.get(id)
+      results = profileData.query.get(id)
       jsonify(
             userid=result.id,
             username=result.username,
