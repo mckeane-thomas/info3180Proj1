@@ -67,7 +67,7 @@ def profile_add():
    if request.method == 'POST':
       #write to the database
       name = request.form['username']
-      img = request.form['img']
+      #img = request.form['img']
       fname = request.form['fname']
       lname = request.form['lname']
       age = request.form['age']
@@ -107,9 +107,16 @@ def profile_list():
 @app.route('/profile/<int:id>/')
 def single_profile(id):
    profile = dataProfile.query.get(id)
-   return render_template("profile_view.html", profile=profile)
+   img = profile_image(profile)
+   time = dateAdded()
+   return render_template("profile_view.html", profile=profile,time=time,img=img)
     #route for viewing a profile by id
     #return "profile {}".format(id)
+
+
+def profile_image(img_name):
+   return url_for('static',img_name='img/profile_pic/'+img_name.image )
+   
 
 app.route('profiles/', methods =['GET'])
 def jsonProfile():
