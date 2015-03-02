@@ -1,7 +1,7 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 
-UPLOAD_FOLDER = 'app/static/img/profile_pics'
+UPLOAD_FOLDER = 'app/static/img/'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
