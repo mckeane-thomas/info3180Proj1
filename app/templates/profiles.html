@@ -4,13 +4,13 @@
   {%block main%}
   <div class ="container">
   <ul>
-  {%for profiles in list_profiles%}
+  {%for profile in list_profiles%}
   <li>
-   <a href ="/profile/{{profiles.id}}">{{profiles.fname}} {{profiles.lname}}</a>
+   <a href ="/profile/{{profiles.id}}">{{profile.fname}} {{profile.lname}}</a>
   
-   {{profiles.username}} {{profiles.age}}
-   {{profiles.sex}} {{profiles.profile_add_on}}
-   {{profiles.high_score}} {{profiles.tDollars}}
+   {{profile.username}} {{profile.age}}
+   {{profile.sex}} {{profile.profile_add_on}}
+   {{profile.high_score}} {{profile.tDollars}}
   </li>
   {%endfor%}}
   </ul>
