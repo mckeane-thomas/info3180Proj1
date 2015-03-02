@@ -10,6 +10,6 @@ app.config['SQLALCHEMY_DATABASE_URI']='postgresql://action@localhost/action'
 db = SQLAlchemy(app)
 
 app.config['SECRET_KEY']="sdfhdjksfhgm nm,sfnjkdfsbdjbfkjsbbjasbhdsbfd"
-app.config.from_object('confg')
+#app.config.from_object('confg')
 
 from app import views,models
