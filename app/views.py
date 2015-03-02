@@ -122,7 +122,7 @@ def single_profile(id):
 
 
 def profile_image(filename):
-   return url_for('static',filename='img/profile_pic/'+ filename.image )
+   return url_for('static',filename='img/'+ filename.img )
    
 
 app.route('profiles/', methods =['GET'])
