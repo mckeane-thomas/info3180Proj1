@@ -103,7 +103,7 @@ def dateAdded():
    date_add=time.strftime("%a  %d  %b  %Y")
    return date_add
   
-@app.route('/profiles/', methods =['GET','POST'])
+@app.route('/profiles/', methods =['POST'])
 def profile_list():
    if request.method=='POST':
       all_users =  ProfileData.query.all()
