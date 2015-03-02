@@ -5,10 +5,11 @@ Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 
 This file creates your application.
 """
-
+import os
 from app import app
 from flask import render_template,request,redirect,url_for,flash, session,jsonify
 from app.forms import RegisterForm
+from werkzeug import secure_filename
 from app import db
 from app.models import profileData
 import time
@@ -67,7 +68,6 @@ def profile_add():
    if request.method == 'POST':
       #write to the database
       name = request.form['username']
-      img = request.form['img']
       fname = request.form['fname']
       lname = request.form['lname']
       age = request.form['age']
@@ -76,9 +76,11 @@ def profile_add():
       profile_add_on = dateAdded()
       tDollars = request.form['tDollars']
       
-      #check if user is already created
-      #isUser = User.query.filter_by(username=name).first()
-      #if(isUser is None):
+      img = request.files['img']
+      if img:
+         filename = username+'_'+secure_filename(img.filename)
+         img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+      
       newprofile = profileData(name,img,fname,lname,age,sex,profile_add_on,high_score,tDollars)
       
       db.session.add(newprofile)
@@ -114,8 +116,8 @@ def single_profile(id):
     #return "profile {}".format(id)
 
 
-def profile_image(img_name):
-   return url_for('static',img_name='img/profile_pic/'+img_name.image )
+def profile_image(filename):
+   return url_for('static',filename='img/profile_pic/'+ filename.image )
    
 
 app.route('profiles/', methods =['GET'])
