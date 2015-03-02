@@ -7,7 +7,7 @@ This file creates your application.
 """
 import os
 from app import app
-from flask import render_template,request,redirect,url_for,flash, session,jsonify
+from flask import render_template,request,redirect,url_for,flash, session,jsonify, send_from_directory
 from app.forms import RegisterForm
 from werkzeug import secure_filename
 from app import db
@@ -79,7 +79,7 @@ def profile_add():
       tDollars = request.form['tDollars']
       
       img = request.files['img']
-      if img:
+      if img and file_allowed(img.filename):
          filename = name+'_'+secure_filename(img.filename)
          img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
       
