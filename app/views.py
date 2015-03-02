@@ -67,7 +67,7 @@ def profile_add():
    #route for adding a profile
    """adding a profile single Profile."""
    form = RegisterForm()
-   if request.method == 'POST' and form.validate_on_submit():
+   if request.method == 'POST':
       #write to the database
       name = request.form['username']
       fname = request.form['fname']
