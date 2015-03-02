@@ -105,9 +105,17 @@ def dateAdded():
   
 @app.route('/profiles/')
 def profile_list():
+   if request.method=='POST':
+      all_users =  ProfileData.query.all()
+      results = []
+      for user in all_users:
+         d ={'username': results.username, 'userid': results.id}
+         results.append[d]
+      return jsonify(users=results)
    #route for adding a profile
-   list_profiles =  ProfileData.query.all()
-   """adding a profile single Profile."""
+   else:
+      list_profiles =  ProfileData.query.all()
+      """adding a profile single Profile."""
       
    return render_template("profiles.html", list_profiles=list_profiles) 
   
