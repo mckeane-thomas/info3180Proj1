@@ -3,7 +3,7 @@ from . import db
 class profileData(db.Model):
         id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(50), unique=True)
-	img = db.Column(db.LargeBinary(50))
+	img = db.Column(db.String(50))
         fname = db.Column(db.String(50))
         lname = db.Column(db.String(50))
         age = db.Column(db.Integer)
@@ -30,4 +30,4 @@ class profileData(db.Model):
            
 
         def __repr__(self):
-	    return '<dataProfile %r %r>' %(self.fname, self.lname)
+	    return '<profileData %r %r>' %(self.fname, self.lname)
