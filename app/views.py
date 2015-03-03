@@ -126,16 +126,14 @@ def single_profile(id):
    format_date = prof_added.strftime("%a, %d %b %Y")
    img = profile_image(results)
    if request.method =="POST":
-      jsonify(
-            userid=results.id,
-            username=results.username,
-            image=results.img,
-            sex=results.sex,
-            age=results.age,
-            profile_add_on=str(format_date),
-            high_score=results.high_score,
-            tDollars=results.tDollars
-            )
+      return jsonify(userid=results.id,
+                     username=results.username,
+                     image=results.img,
+                     sex=results.sex,
+                     age=results.age,
+                     profile_add_on=str(format_date),
+                     high_score=results.high_score,
+                     tDollars=results.tDollars)
    else:
       return render_template("profile_view.html", results=results,time=format_date,img=img)
     #route for viewing a profile by id
