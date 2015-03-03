@@ -90,7 +90,7 @@ def profile_add():
       db.session.add(newprofile)
       db.session.commit()
          #session['user_id']=user.id
-      flash('Registration Completed For%s %name ) 
+      flash('Registration Completed For %s' %name ) 
       return render_template("profiles.html", form=form)
          #flash("New Profile added")
    #else:
