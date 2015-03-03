@@ -9,41 +9,41 @@
      </div>
      <div id ="info">
       	<p>
-      		<span>User ID: {{profile.id}} </span>
+      		<span>User ID: {{results.id}} </span>
         </p>
         <p>  
-           <span>Full Name:  {{profile.fname}} {{profile.lname}} </span>
+           <span>Full Name:  {{results.fname}} {{results.lname}} </span>
         </p>
      </div>
      <div id="Info1">
 	<p>            
-            <span>Date:  {{profile.profile_add_on}}</span>
+            <span>Date:  {{results.profile_add_on}}</span>
         </p>
     </div>
     <div id="Info2">        
       
 	 <p>            
-            <span>Username:{{profile.username}}</span>
+            <span>Username:{{results.username}}</span>
         </p>
 
 	<p>            
-            <span>Sex: {{profile.sex}}</span>
+            <span>Sex: {{results.sex}}</span>
         </p>
 	<p>            
-            <span>Age:{{profile.sex}}</span>
+            <span>Age:{{results.sex}}</span>
         </p>
 		
 	<p>            
-            <span>High Score: {{profile.high_score}}</span>
+            <span>High Score: {{results.high_score}}</span>
         </p>
 	<p>            
-            <span>TDollars:{{profile.tDollars}}</span>
+            <span>TDollars:{{results.tDollars}}</span>
         </p> 
     </div>
 
     <!-- Needed because other elements inside ProfilePage have floats -->
     <div style="clear:both"></div>
-   <form  action="{{ url_for('.single_profile',id=profile.id) }}" method="POST">
+   <form  action="{{ url_for('.single_profile',id=results.id) }}" method="POST">
   <p>Click on the button to view the user as json content application heading</p>
   <input type="submit" value="Submit">
   </form
