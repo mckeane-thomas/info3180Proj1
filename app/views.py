@@ -119,11 +119,24 @@ def profile_list():
       
    return render_template("profiles.html", list_profiles=list_profiles) 
   
-@app.route('/profile/<int:id>/')
+@app.route('/profile/<int:id>/', methods =['GET','POST'])
 def single_profile(id):
-   profile =  ProfileData.query.get(id)
-   img = profile_image(profile)
-   time = dateAdded()
+   if request.method =="POST":
+      results =  ProfileData.query.get(id)
+      jsonify(
+            userid=result.id,
+            username=result.username,
+            #image=result.img,
+            sex=result.sex,
+            age=result.age,
+            profile_add_on=result.profile_add_on,
+            high_score=result.high_score,
+            tDollars=result.tDollars
+            )
+   else:
+      profile =  ProfileData.query.get(id)
+      img = profile_image(profile)
+      time = dateAdded()
    return render_template("profile_view.html", profile=profile,time=time,img=img)
     #route for viewing a profile by id
     #return "profile {}".format(id)
