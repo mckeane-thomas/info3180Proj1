@@ -91,8 +91,8 @@ def profile_add():
          #session['user_id']=user.id
          return "Registration Completed values added to the database"  
          #flash("New Profile added")
-   else:
-      return ("Fill in required field") 
+   #else:
+    #  return ("Fill in required field") 
    #else:  
    #return redirect(url_for('home'))
    return render_template("profile_add.html", form=form)
