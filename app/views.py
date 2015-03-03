@@ -124,7 +124,7 @@ def single_profile(id):
    results =  ProfileData.query.get(id)
    prof_added = results.profile_add_on
    format_date = prof_added.strftime("%a, %d %b %Y")
-   img = profile_image(profile)
+   img = profile_image(results)
    if request.method =="POST":
       jsonify(
             userid=results.id,
