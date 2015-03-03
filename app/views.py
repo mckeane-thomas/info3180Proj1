@@ -89,13 +89,13 @@ def profile_add():
          db.session.add(newprofile)
          db.session.commit()
       #session['user_id']=user.id
-      return "Registration Completed values added to the database"  
-      flash("New Profile added")
+         return "Registration Completed values added to the database"  
+         flash("New Profile added")
       else:
          return("Profile could not be Created Fill in required fields")
    #else:  
    #return redirect(url_for('home'))
-      return render_template("profile_add.html", form=form) 
+   return render_template("profile_add.html", form=form) 
    
 def file_allowed(filename):
    return '.' in filename and filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS
