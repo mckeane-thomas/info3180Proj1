@@ -12,7 +12,7 @@
   <ul>
     <li><a href ="{{ url_for('profile_add') }}">Create a Profile</a><li>
     <li><a href ="{{ url_for('profile_list') }}">All Profile View</a></li>
-    <li><a href ="profile_view.htiml">By User>
+    <li><a href ="{{ url_for('.single_profile',id=results.id) }}" >By User>
     
   </ul>
   <p>Profile can be view in JSON format.</p>
