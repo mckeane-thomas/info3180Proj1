@@ -69,7 +69,7 @@ def profile_add():
    form = RegisterForm()
    if request.method == 'POST':
       #write to the database
-      if form.validate_onSubmit():
+      if form.validate_on_submit():
          name = request.form['username']
          fname = request.form['fname']
          lname = request.form['lname']
