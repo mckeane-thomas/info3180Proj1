@@ -12,7 +12,7 @@ class RegisterForm(Form):
       #profile_photo =FileField('Profile Image')
 	userid =IntegerField('ID:', [Required()])
 	username = StringField('Username:', [Required()])
-	#img = FileField('image', validators=[Optional(),FileAllowed(['jpg', 'png'], 'Images only!')])
+	img = FileField('image', validators=[Optional(),FileAllowed(['jpg', 'png'], 'Images only!')])
 	fname = StringField('First Name:', [Required()])
 	lname = StringField('Last Name:', [Required()])
 	sex = RadioField(u'Sex', choices=[
@@ -20,6 +20,6 @@ class RegisterForm(Form):
         ('F', u'Female')],
         default='M', validators=[Required()])
 	age = IntegerField('Age:', [Required()])
-	profile_add_on = DateField('Profile Created',[Required()])
+	#profile_add_on = DateField('Profile Created',validators[Required()])
 	high_score = IntegerField('High Score', [Optional()])
 	tDollars = IntegerField('TDollars', [Optional()])
