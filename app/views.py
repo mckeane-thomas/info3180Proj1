@@ -17,6 +17,8 @@ import time, string
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
+app= Blueprint('users', __name__, url_prefix='/users')
+
 ###
 # Routing for your application.
 ###
@@ -88,7 +90,8 @@ def profile_add():
       db.session.add(newprofile)
       db.session.commit()
          #session['user_id']=user.id
-      return "Registration Completed values added to the database"  
+      flash('Registration Completed%s' %name 'Added to the Database') 
+      return render_template("profiles.html", form=form)
          #flash("New Profile added")
    #else:
     #  return ("Fill in required field") 
