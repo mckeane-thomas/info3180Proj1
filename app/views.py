@@ -137,7 +137,7 @@ def single_profile(id):
             tDollars=results.tDollars
             )
    else:
-      return render_template("profile_view.html", profile=profile,time=format_date,img=img)
+      return render_template("profile_view.html", results=results,time=format_date,img=img)
     #route for viewing a profile by id
     #return "profile {}".format(id)
 
