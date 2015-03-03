@@ -7,12 +7,11 @@
 
 
 {% block main %}
-<h2>Simple Flask App for Creating and viewing a Profile<h2>
+<h2>Simple Flask App for Creating and viewing a Profile</h2>
 <p>Profile views are in the format: </p>
   <ul>
     <li><a href ="{{ url_for('profile_add') }}">Create a Profile</a><li>
     <li><a href ="{{ url_for('profile_list') }}">All Profile View</a></li>
-    <li><a href ="{{ url_for('.single_profile',id=results.id) }}" >By User>
     
   </ul>
   <p>Profile can be view in JSON format.</p>
