@@ -17,7 +17,7 @@ import time, string
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
-app= Blueprint('users', __name__, url_prefix='/users')
+#app= Blueprint('users', __name__, url_prefix='/users')
 
 ###
 # Routing for your application.
