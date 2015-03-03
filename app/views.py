@@ -67,7 +67,7 @@ def profile_add():
    #route for adding a profile
    """adding a profile single Profile."""
    form = RegisterForm()
-   if form.validate_on_submit():
+   if form.validate_on_submit() and request.method =='POST':
       #write to the database
       name = request.form['username']
       fname = request.form['fname']
@@ -90,10 +90,10 @@ def profile_add():
       return "Registration Completed values added to the database"  
       flash("New Profile added")
    else:
-      return render_template("profile_add.html", form=form) 
+      return ("Fill in required field") 
    #else:  
    #return redirect(url_for('home'))
-   
+   return render_template("profile_add.html", form=form)
    
 def file_allowed(filename):
    return '.' in filename and filename.rsplit('.',1)[1] in ALLOWED_EXTENSIONS
