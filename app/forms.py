@@ -10,9 +10,9 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 
 class RegisterForm(Form):
       #profile_photo =FileField('Profile Image')
-	userid =IntegerField('ID:', [Required()])
+	#userid =IntegerField('ID:', [Required()])
 	username = StringField('Username:', [Required()])
-	img = FileField('image', validators=[Optional(),FileAllowed(['jpg', 'png'], 'Images only!')])
+	#img = FileField('image', validators=[Optional(),FileAllowed(['jpg', 'png'], 'Images only!')])
 	fname = StringField('First Name:', [Required()])
 	lname = StringField('Last Name:', [Required()])
 	sex = RadioField(u'Sex', choices=[
