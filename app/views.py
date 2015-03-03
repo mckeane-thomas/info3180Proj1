@@ -70,26 +70,25 @@ def profile_add():
    if form.validate_on_submit():
       return ("Validation Successful")
       #write to the database
-      if request.method =='POST':
-         name = request.form['username']
-         fname = request.form['fname']
-         lname = request.form['lname']
-         age = request.form['age']
-         sex = request.form['sex']
-         high_score=request.form['high_score']
-         profile_add_on = dateAdded()
-         tDollars = request.form['tDollars']
-         file = request.files['file']
-         if file and file_allowed(file.filename):
-            filename = name+'_'+secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+      name = request.form['username']
+      fname = request.form['fname']
+      lname = request.form['lname']
+      age = request.form['age']
+      sex = request.form['sex']
+      high_score=request.form['high_score']
+      profile_add_on = dateAdded()
+      tDollars = request.form['tDollars']
+      file = request.files['file']
+      if file and file_allowed(file.filename):
+         filename = name+'_'+secure_filename(file.filename)
+         file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
       
-         newprofile =  ProfileData(name,filename,fname,lname,age,sex,profile_add_on,high_score,tDollars)
+      newprofile =  ProfileData(name,filename,fname,lname,age,sex,profile_add_on,high_score,tDollars)
       
-         db.session.add(newprofile)
-         db.session.commit()
+      db.session.add(newprofile)
+      db.session.commit()
          #session['user_id']=user.id
-         return "Registration Completed values added to the database"  
+      return "Registration Completed values added to the database"  
          #flash("New Profile added")
    #else:
     #  return ("Fill in required field") 
